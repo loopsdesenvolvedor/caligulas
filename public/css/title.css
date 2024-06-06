@@ -1,0 +1,35 @@
+div.title {
+  margin: 2rem 0;
+  > h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    letter-spacing: 1px;
+
+    &::after {
+      content: "";
+      width: 5rem;
+      height: 0.2rem;
+      background-color: var(--red);
+      position: absolute;
+      left: 0;
+      bottom: -1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin: 5rem 0;
+    > h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      padding-bottom: 0.4rem;
+
+      &::after {
+        content: "";
+        width: 6rem;
+        height: 0.4rem;
+        background-color: var(--red);
+      }
+    }
+  }
+}
