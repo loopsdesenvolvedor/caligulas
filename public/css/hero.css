@@ -1,0 +1,120 @@
+#hero {
+  margin-top: 3rem;
+  width: 100%;
+  height: auto;
+
+  @media (min-width: 768px) {
+    > div {
+      > h1 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        &::after {
+          width: 6rem;
+          height: 0.4rem;
+          bottom: -1.6rem;
+        }
+      }
+    }
+  }
+}
+
+#card-group {
+  margin: 5rem 0 2.4rem 0;
+  width: 100%;
+  height: auto;
+  .cards {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(15rem, max-content));
+    gap: 1rem;
+
+    .card {
+      width: 100%;
+      height: auto;
+      max-width: 30rem;
+      background-color: var(--black);
+      border-radius: 0.4rem;
+
+      .card-img {
+        width: 100%;
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: var(--white);
+        > div {
+          position: relative;
+          > img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            max-height: 22rem;
+            border-top-right-radius: 0.4rem;
+            border-top-left-radius: 0.4rem;
+          }
+
+          .card-alerts {
+            position: absolute;
+            bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 1rem;
+            .card-time {
+              font-size: 1.2rem;
+              font-weight: 600;
+              padding: 0.4rem 0.6rem;
+              border-radius: 0.2rem;
+              background-color: var(--black-80);
+            }
+            .card-notification {
+              font-size: 1.2rem;
+              font-weight: 600;
+              padding: 0.4rem 0.6rem;
+              border-radius: 0.2rem;
+              background-color: var(--red);
+            }
+          }
+        }
+      }
+
+      .card-title {
+        text-decoration: none;
+
+        > div {
+          width: 100%;
+          height: auto;
+          padding: 1rem 0.4rem;
+          font-size: 1.4rem;
+          color: var(--white);
+          padding-top: 0.4rem;
+          padding-left: 0.6rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .cards {
+      grid-template-columns: repeat(3, minmax(15rem, max-content));
+    }
+  }
+  @media (min-width: 1080px) {
+    .cards {
+      grid-template-columns: repeat(5, minmax(15rem, max-content));
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .cards {
+      grid-template-columns: repeat(6, minmax(15rem, max-content));
+    }
+  }
+  @media (min-width: 1800px) {
+    .cards {
+      grid-template-columns: repeat(8, minmax(15rem, max-content));
+    }
+  }
+}
