@@ -4,3 +4,40 @@
 @import url("./title.css");
 @import url("./hero.css");
 @import url("./categories.css");
+
+:root {
+  --white: #ffffff;
+  --black: #090c0f;
+  --black-80: #1b252e;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-10: rgba(255, 255, 255, 0.2);
+  --red: #bd1e1e;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-size: 62.5%;
+  font-weight: 300;
+  color: var(--white);
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--black-80);
+}
+
+.container {
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  height: 6rem;
+  padding: 0 2rem;
+}
