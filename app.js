@@ -31,9 +31,6 @@ connection
   })
   .catch((err) => console.log(err));
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
-
 app.use(
   session({
     secret: NODE_SECRET,
@@ -42,6 +39,7 @@ app.use(
     cookie: { maxAge: 24 * 60 * 60 * 1000 },
   })
 );
+
 app.use("/", indexRouter);
 app.use("/", usersRouter);
 app.use("/", dashboardRouter);
