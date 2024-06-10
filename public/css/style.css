@@ -4,6 +4,9 @@
 @import url("./title.css");
 @import url("./hero.css");
 @import url("./categories.css");
+@import url("./admin/login.css");
+@import url("./admin/dashboard.css");
+@import url("./pages/page-destination.css");
 
 :root {
   --white: #ffffff;
