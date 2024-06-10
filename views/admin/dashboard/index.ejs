@@ -1,0 +1,73 @@
+<%- include('../../partials/header') %>
+  <body>
+    <div id="admin-dashboard">
+      <header>
+    
+        <img src="/img/caligulas.svg" alt="Logo Caligulas" />
+        <button>Sair</button>00
+      </header>
+
+      <main>
+        <div>
+          <h1>Cadastro de vídeo</h1>
+ 
+            <form action="/admin/dashboard/categories" method="post">
+              <label>Cadastro de categoria
+                <input type="text" name="title" placeholder="Digite o nome da categoria">
+              </label>
+              <button type="submit"><img src="/img/btn-add.svg" alt="Botão adicionar"></button>
+            </form>
+   
+        </div>
+
+        <form action="/admin/dashboard/video" method="post"  enctype="multipart/form-data">
+          <label>
+            Título
+            <input
+              type="text"
+              name="title"
+              placeholder="Digite o título do vídeo"
+            />
+          </label>
+          <label>
+            Tempo de vídeo
+            <input
+              type="text"
+              name="time"
+              placeholder="Digite a duração do vídeo"
+            />
+          </label>
+          <label>
+            Descrição
+            <textarea
+              rows="10"
+              name="description"
+              placeholder="Faça um descrição"
+            ></textarea>
+          </label>
+          <label>
+            Banner
+            <input type="file" name="banner"/>
+          </label>
+          <label>
+            Vídeo
+            <input type="file" name="video" />
+          </label>
+    
+          <label
+            >Categorias
+            <select name="category" >
+              <option value="">Escolha uma categoria</option>
+               <% categories.forEach(category => { %>
+                <option value="<%= category.id %>"><%= category.title %></option>
+               <% }) %>
+   
+            </select>
+          </label>
+          <button type="submit">Cadastrar</button>
+        </form>
+      </main>
+
+    
+    </div>
+    <%- include('../../partials/footer') %>
