@@ -1,0 +1,25 @@
+<div id="pagination">
+    <% if (isHome) { %>
+      <div>
+        <a href="/">1</a>
+        <a href="/page/2">2</a>
+        <a href="/page/3">Proximo</a>
+        </div>
+    <% } %>
+
+    <% if (result) { %>
+      <% if(!isHome) {%>
+
+        <% if (result.page >= 2 ) { %>
+          <a href="/page/<%= result.page - 1 %>">Anterior</a>
+          <a href="/page/<%= result.page - 1 %>"><%= result.page -1 %></a>
+          <a href="/page/<%= (result.page + 1) -1 %>"><%= result.page %></a>
+          <% if (result.next) { %> 
+              <a href="/page/<%= (result.page + 2) -1 %>"><%= result.page + 1 %></a>
+              <a href="/page/<%= result.page + 1 %>">Proximo</a>
+          <% } %>
+        <% } %>
+
+     <% } %>
+    <% } %>
+ </div>
