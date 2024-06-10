@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+<%- include('partials/drawer') %>
+  
+    <main id="video-container">
+      <div class="container">
+        <section id="page-destination">
+          <div>
+            <h1>
+              <%= video.title %>
+            </h1>
+            <div class="video-container">
+              <video src="/files/<%= video.video %>" type="video/mp4"></video>
+              <div class="controls">
+             
+                <button id="play">
+                  <img src="/img/play.svg" alt="Botão play">
+                </button>
+                <button id="pause" style="display:none;">
+                  <img src="/img/pause.svg" alt="Botão pause">
+                </button>
+                <div class="progress-container">
+                  <div class="progress"></div>
+                </div>
+                <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+              </div>
+              <button id="play-toggle">
+              </button>
+            </div>
+            <p>
+              <%= video.description %>
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+    <%- include('partials/footer') %>
