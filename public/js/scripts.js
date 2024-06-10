@@ -54,6 +54,21 @@
       playToggle.style.display = "block";
     });
 
+    video.addEventListener("click", (e) => {
+      const clicked = video.classList.toggle("clicked");
+      if (clicked) {
+        video.play();
+        playBtn.style.display = "none";
+        pauseBtn.style.display = "block";
+        playToggle.style.display = "none";
+      } else {
+        video.pause();
+        pauseBtn.style.display = "none";
+        playBtn.style.display = "block";
+        playToggle.style.display = "block";
+      }
+    });
+
     // Atualizar a barra de progresso conforme o vídeo toca
     video.addEventListener("timeupdate", () => {
       const percent = (video.currentTime / video.duration) * 100;
