@@ -97,12 +97,17 @@
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 530px) {
     .cards {
       grid-template-columns: repeat(3, minmax(15rem, max-content));
     }
   }
-  @media (min-width: 1080px) {
+  @media (min-width: 780px) {
+    .cards {
+      grid-template-columns: repeat(4, minmax(15rem, max-content));
+    }
+  }
+  @media (min-width: 1024px) {
     .cards {
       grid-template-columns: repeat(6, minmax(15rem, max-content));
     }
