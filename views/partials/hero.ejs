@@ -2,24 +2,101 @@
   <%- include('title') %>
   <section id="card-group">
     <div class="cards">
-      <div class="card">
-        <a class="card-img" href="#">
-          <div>
-            <img
-              src="/files/55a4b18c98fcb42d48399e01ee728793-camilla-becker-de-quatro-na-banheira-levando-rola.png"
-              alt="imgteste"
-            />
-            <div class="card-alerts">
-              <span class="card-time">03:00</span>
+    <% if (typeof isCategory === 'boolean' && isCategory) { %>
 
-              <span class="card-notification" class="card-time">NOVO</span>
+      <% videos.forEach(video => { %>
+        <div class="card">
+          <a class="card-img" href="/video/<%= video.id %>">
+            <div>
+              <img src="/files/<%= video.banner %>" alt="<%= video.title %>" />
+              <div class="card-alerts">
+                <span class="card-time"><%= video.time %></span>
+                <% if (recentVideos.some(recent => recent.id === video.id)) { %>
+                <span class="card-notification" class="card-time">NOVO</span>
+                <% } %>
+              </div>
             </div>
+          </a>
+          <a class="card-title" href="/video/<%= video.id %>">
+            <div><%= video.title %></div>
+          </a>
+        </div>
+    <% }) %> 
+ 
+    <% } else { %>
+      <% if (result && result.videos && result.videos.rows.length > 0) { %> 
+        <% result.videos.rows.forEach(video => { %>
+        <div class="card">
+          <a class="card-img" href="/video/<%= video.id %>">
+            <div>
+              <img src="/files/<%= video.banner %>" alt="<%= video.title %>" />
+              <div class="card-alerts">
+                <span class="card-time"><%= video.time %></span>
+                <% if (recentVideos.some(recent => recent.id === video.id)) { %>
+                <span class="card-notification" class="card-time">NOVO</span>
+                <% } %>
+              </div>
+            </div>
+          </a>
+          <a class="card-title" href="/video/<%= video.id %>">
+            <div><%= video.title %></div>
+          </a>
+        </div>
+        <% }) %> 
+        <% } else { %> 
+          <% videos.forEach(video => { %>
+              <div class="card">
+                <a class="card-img" href="/video/<%= video.id %>">
+                  <div>
+                    <img src="/files/<%= video.banner %>" alt="<%= video.title %>" />
+                    <div class="card-alerts">
+                      <span class="card-time"><%= video.time %></span>
+                      <% if (recentVideos.some(recent => recent.id === video.id)) { %>
+                      <span class="card-notification" class="card-time">NOVO</span>
+                      <% } %>
+                    </div>
+                  </div>
+                </a>
+                <a class="card-title" href="/video/<%= video.id %>">
+                  <div><%= video.title %></div>
+                </a>
+              </div>
+          <% }) %> 
+        
+        <% } %>
+    <% } %>
+
+
+    </div>
+    <div id="links">
+      <% if (isHome) { %>
+        <div>
+          <a href="/page/2">2</a>
+          <a href="/page/3">3</a>
+          <a href="/page/3">Proximo</a>
           </div>
-        </a>
-        <a class="card-title" href="#">
-          <div>Levando rola do amigo</div>
-        </a>
-      </div>
+      <% } %>
+
+      <% if (result) { %>
+        <% if(!isHome) {%>
+
+          <% if (result.page >= 2) { %>
+            <a href="/page/<%= result.page - 1 %>">Anterior</a>
+            <a href="/page/<%= result.page - 1 %>"><%= result.page -1 %></a>
+            <a href="/page/<%= (result.page + 1) -1 %>"><%= result.page %></a>
+            <a href="/page/<%= (result.page + 2) -1 %>"><%= result.page + 1 %></a>
+          <% } else { %>
+            <a href="/page/<%= result.page + 1 %>"><%= result.page +1 %></a>
+            <a href="/page/<%= result.page + 1 %>">Proximo</a>
+          <% } %>
+
+       <% } %>
+      <% } %>
+
+
+
+    
+ 
     </div>
   </section>
 </main>

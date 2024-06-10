@@ -1,6 +1,40 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 const Video = require("../model/Video");
+const Sequelize = require("sequelize");
+const Category = require("../model/Category");
+
+router.get("/", async (req, res) => {
+  try {
+    const videos = await Video.findAll({
+      order: [["id", "DESC"]],
+      limit: 30,
+    });
+
+    const now = new Date();
+    const twentyFourHoursAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+
+    const recentVideos = await Video.findAll({
+      where: {
+        createdAt: {
+          [Sequelize.Op.gte]: twentyFourHoursAgo,
+        },
+      },
+    });
+
+    res.render("index", {
+      title: "Express",
+      videos,
+      recentVideos,
+      result: false,
+      isHome: true,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Erro ao buscar vídeos");
+  }
+});
+
 router.get("/video/:id", async (req, res) => {
   const id = req.params.id;
   await Video.findByPk(id)
@@ -9,6 +43,7 @@ router.get("/video/:id", async (req, res) => {
     })
     .catch((err) => console.log(err));
 });
+
 router.get("/page/:num", async (req, res) => {
   try {
     let page = req.params.num;
