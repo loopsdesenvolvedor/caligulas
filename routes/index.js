@@ -9,6 +9,62 @@ router.get("/video/:id", async (req, res) => {
     })
     .catch((err) => console.log(err));
 });
+router.get("/page/:num", async (req, res) => {
+  try {
+    let page = req.params.num;
+    let offset = 0;
+
+    page = parseInt(page);
+
+    if (page === 1) {
+      res.redirect("/");
+    }
+
+    const now = new Date();
+    const twentyFourHoursAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+
+    const recentVideos = await Video.findAll({
+      where: {
+        createdAt: {
+          [Sequelize.Op.gte]: twentyFourHoursAgo,
+        },
+      },
+    });
+    console.log(typeof page);
+    if (isNaN(page) || page <= 1) {
+      page = 0;
+    } else {
+      offset = (page - 1) * 30;
+    }
+
+    const videos = await Video.findAndCountAll({
+      limit: 30,
+      offset: offset,
+    });
+
+    const hasNext = offset + 30 < videos.count;
+    const hasPrev = page >= 1;
+
+    let result = {
+      page: page,
+      next: hasNext,
+      prev: hasPrev,
+      videos: videos,
+    };
+
+    res.render("page", {
+      title: "",
+      result,
+      recentVideos,
+      videos: [],
+      isHome: false, // Definido como false para outras páginas
+      isCategory: false,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Erro ao buscar vídeos");
+  }
+});
 
 router.get("/page/category/:slug", async (req, res) => {
   let slug = req.params.slug;
