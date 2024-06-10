@@ -15,5 +15,17 @@
     background-color: var(--black);
     border: 0.1rem solid var(--border-10);
     padding: 0.6rem 1rem;
+    border-radius: 0.2rem;
+
+    &:hover {
+      background-color: var(--red);
+      border-color: var(--red);
+    }
+  }
+
+  @media (min-width: 768px) {
+    & a {
+      border-radius: 0.4rem;
+    }
   }
 }
