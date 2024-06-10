@@ -18,19 +18,6 @@ Video.belongsTo(Category, {
   onDelete: "CASCADE",
 });
 
-User.hasMany(Video, {
-  foreignKey: {
-    allowNull: false,
-  },
-  onDelete: "CASCADE",
-});
-Video.belongsTo(User, {
-  foreignKey: {
-    allowNull: false,
-  },
-  onDelete: "CASCADE",
-});
-
 connection
   .sync()
   .then(() => {
