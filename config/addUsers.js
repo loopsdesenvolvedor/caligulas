@@ -21,4 +21,4 @@ async function addUser(email, password) {
 }
 
 // Exemplo de uso
-addUser("scarabellot.lopes@gmail.com", "120900**");
+addUser("exemple@email.com", "passwordexemple");
