@@ -13,7 +13,7 @@
     "@prisma/client": "^5.20.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.15"
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "typescript": "^5",
