@@ -1,12 +1,15 @@
-# Jobs - Job Vacancy Platform
+# Caligula's - Adult Content Site
 
-Welcome to the **Jobs** project, a full-stack application built with **Next.js**. This platform allows users to search for job vacancies, post job listings, and manage their applications.
+Welcome to the **Caligula** project, a full-stack application built with **Next.js**. This platform allows users to search for adult videos, consume, comment and post. Furthermore, they can create an account and post their own content. This site is for people over 18 years old.
 
-## Figma Design
+## UI/UX Design
 
-The design for the Jobs project can be found at the following link
+Caligula's project design can be found at the following link
 
-[Replace with your actual Figma link]('https://www.figma.com/design/o0NF1UaJRxLkJYn85h1ehR/jobs?node-id=0-1&node-type=canvas&t=I4gjpSRySNgr0OP5-0')
+(CUIDADO CONTEÚDO ADULTO +18)
+(CAUTION ADULT CONTENT +18)
+
+[PORJECT UNDER DEVELOPEMENT AT FIGMA]('https://www.figma.com/design/6pijIBjw9o4TpmQ72R0KTc/Caligulas?node-id=1230-353&node-type=canvas&t=MlsMxeRQtlf5Hgw3-0')
 
 ## Technologies Used
 
@@ -19,16 +22,6 @@ The design for the Jobs project can be found at the following link
 - **Styled Components**
   files.
 
-## Features
-
-- User authentication with NextAuth
-- Job listing creation and management
-- Search functionality for job vacancies
-- Responsive design
-- UI component library developed with Storybook
-
-## Getting Started
-
 ### Prerequisites
 
 - Node.js (version 14 or later)
@@ -38,8 +31,8 @@ The design for the Jobs project can be found at the following link
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/loopsdesenvolvedor/jobs.git
-   cd jobs
+   git clone https://github.com/loopsdesenvolvedor/caligulas.git
+   cd caligulas
    npm or yarn install
    yarn dev or npm dev
    ```
@@ -62,10 +55,6 @@ Contributions are welcome! Please fork the repository and create a pull request 
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-
 ### Contact
 
 For any inquiries, feel free to reach out via scarabellot.lopes@gmail.com or create an issue in the GitHub repository.
-
-
-![JOBS _ MOBILE](https://github.com/user-attachments/assets/b6acfff5-b23b-4a58-b45b-cf1f79ad9b62)
