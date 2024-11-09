@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Caligula's - Adult Content Site
 
-## Getting Started
+Welcome to the **Caligula** project, a full-stack application built with **Next.js**. This platform allows users to search for adult videos, consume, comment and post. Furthermore, they can create an account and post their own content. This site is for people over 18 years old.
 
-First, run the development server:
+## UI/UX Design
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Caligula's project design can be found at the following link
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+(CUIDADO CONTEÚDO ADULTO +18)
+(CAUTION ADULT CONTENT +18)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+[PROJECT UNDER DEVELOPMENT AT FIGMA](https://www.figma.com/design/6pijIBjw9o4TpmQ72R0KTc/Caligulas?node-id=490-2&node-type=canvas&t=lSxYJ0YBTgPf3Bqn-0)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies Used
 
-## Learn More
+- **Next.js** - A React framework for building server-side rendered applications.
+- **NextAuth** - Authentication solution for Next.js applications.
+- **TypeScript** - A superset of JavaScript that adds static typing.
+- **bcryptjs** - A library for hashing passwords.
+- **Multer** - Middleware for handling `multipart/form-data`, used for uploading
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js (version 14 or later)
+- npm or yarn
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Installation
 
-## Deploy on Vercel
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/loopsdesenvolvedor/caligulas.git
+   cd caligulas
+   npm or yarn install
+   yarn dev or npm dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contributions are welcome! Please fork the repository and create a pull request for any enhancements or bug fixes.
+
+### License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+### Contact
+
+For any inquiries, feel free to reach out via scarabellot.lopes@gmail.com or create an issue in the GitHub repository.
