@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         background: "var(--background)",
+        componentBackground: "var(--componentBackground)",
         textColor: "var(--textColor)",
         details10: "var(--details10)",
         details20: "var(--details20)",
