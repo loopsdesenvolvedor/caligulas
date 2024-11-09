@@ -1,6 +1,8 @@
-import { PropsWithChildren } from "react";
+import { ReactNode } from "react";
 
-type PageContainerProps = PropsWithChildren<{}>;
+type PageContainerProps = {
+  children: ReactNode;
+};
 
 const PageContainer = ({ children }: PageContainerProps) => {
   return <div className="w-full max-w-7xl mx-auto px-4">{children}</div>;
