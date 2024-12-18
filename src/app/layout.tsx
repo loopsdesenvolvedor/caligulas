@@ -1,6 +1,14 @@
 import { Metadata } from "next";
 import { Poppins } from "next/font/google";
+
 import StyledComponentsRegistry from "@/lib/registry";
+import ThemeProvider from "@/Providers/ThemeProvider";
+import GlobalStyle from "@/styles/GlobalStyle";
+
+import ProviderStore from "../Providers/ProvidersStore";
+
+import Header from "@/components/Header";
+
 const poppins = Poppins({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -19,10 +27,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Provider store={store}>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        </Provider>
+      <body className={`${poppins.variable}`}>
+        <ProviderStore>
+          <StyledComponentsRegistry>
+            <ThemeProvider>
+              <GlobalStyle />
+              <Header />
+              {children}
+            </ThemeProvider>
+          </StyledComponentsRegistry>
+        </ProviderStore>
       </body>
     </html>
   );
