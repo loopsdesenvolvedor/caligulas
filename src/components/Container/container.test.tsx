@@ -43,6 +43,6 @@ describe("Container", () => {
         <Container>Test content</Container>
       </ThemeProvider>
     );
-    expect(container.firstChild).toHaveStyle(`padding: 0 2rem`); // Ajuste de acordo com o valor no seu theme
+    expect(container.firstChild).toHaveStyle(`padding: 0 2rem`); 
   });
 });
