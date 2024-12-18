@@ -1,19 +1,17 @@
 import type { Config } from "jest";
-import nextJest from "next/jest.js";
+import nextJest from "next/jest";
 
 const createJestConfig = nextJest({
   dir: "./",
 });
 
-// Add custom config to be passed to Jest
 const config: Config = {
   coverageProvider: "v8",
   testEnvironment: "jsdom",
   transform: {
-    "^.+\\.(ts|tsx)$": "ts-jest", // Transformação para TypeScript (caso use)
-    "^.+\\.(js|jsx)$": "esbuild-jest", // Transformação para JavaScript com esbuild (alternativa ao Babel)
+    "^.+\\.(js|jsx)$": "esbuild-jest",
   },
-  setupFilesAfterEnv: ["jest-styled-components"], // Adiciona a configuração do jest-styled-components
+  setupFilesAfterEnv: ["jest-styled-components", "<rootDir>/src/setupTests.ts"],
 };
 
 export default createJestConfig(config);
