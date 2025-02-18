@@ -24,7 +24,7 @@ O design da plataforma está sendo desenvolvido no **Figma** e pode ser acessado
 [🔗 Visualizar no Figma](https://www.figma.com/proto/6pijIBjw9o4TpmQ72R0KTc/Caligulas?node-id=490-3&t=OQsg6IxURVgfhoZi-0&scaling=min-zoom&content-scaling=fixed&page-id=490%3A2)  
 
 ## 📜 Aviso Legal
-
+ATENÇÃO CONTEÚDO PARA MAIORES DE 18 ANOS!
 As imagens de atores de conteúdo adulto utilizadas no site são **estritamente para fins educativos**. O projeto segue todas as normas e regulamentações aplicáveis.  
 
 ## 📦 Instalação e Configuração
