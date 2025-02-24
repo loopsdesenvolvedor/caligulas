@@ -11,6 +11,11 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        whiteColor: "var(--whiteColor)",
+        white80Color: "var(--white80Color)",
+        redColor: "var(--redColor)",
+        yellowColor: "var(--yellowColor)",
+        borderColor: "var(--borderColor)",
       },
     },
   },
