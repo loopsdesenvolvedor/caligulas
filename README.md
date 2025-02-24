@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🔥 Caligulas - Plataforma de Conteúdo Adulto 🔥
 
-## Getting Started
+Este é um site adulto desenvolvido com **Next.js**, **Axios**, **TypeScript** e **Tailwind CSS**, utilizando uma API em **Express** e **TypeScript**. O objetivo é fornecer uma experiência fluida e segura para usuários e criadores de conteúdo.  
 
-First, run the development server:
+## 🚀 Tecnologias Utilizadas
 
+### **Frontend**
+- **Next.js** - Framework React para SSR e otimização de desempenho.
+- **TypeScript** - Tipagem estática para um código mais seguro.
+- **Axios** - Consumo da API de forma eficiente.
+- **Tailwind CSS** - Estilização rápida e responsiva.
+
+### **Backend**
+- **Express.js** - Framework para criação da API.
+- **TypeScript** - Código tipado para melhor manutenção.
+- **Multer** - Upload seguro de arquivos.
+- **CORS** - Permissão de acesso entre domínios.
+- **Bcrypt** - Criptografia de senhas para segurança.
+- **JSON Web Token (JWT)** - Autenticação segura.
+
+## 🎨 UI/UX
+
+O design da plataforma está sendo desenvolvido no **Figma** e pode ser acessado pelo link:  
+[🔗 Visualizar no Figma](https://www.figma.com/proto/6pijIBjw9o4TpmQ72R0KTc/Caligulas?node-id=490-3&t=OQsg6IxURVgfhoZi-0&scaling=min-zoom&content-scaling=fixed&page-id=490%3A2)  
+
+## 📜 Aviso Legal
+**ATENÇÃO CONTEÚDO PARA MAIORES DE 18 ANOS!**
+As imagens de atores de conteúdo adulto utilizadas no site são **estritamente para fins educativos**. O projeto segue todas as normas e regulamentações aplicáveis.  
+
+## 📦 Instalação e Configuração
+
+### **1️⃣ Clonar o Repositório**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/seu-usuario/caligulas.git
+cd caligulas
+yarn dev or npm run dev
