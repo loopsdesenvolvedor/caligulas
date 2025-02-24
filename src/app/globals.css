@@ -18,16 +18,9 @@ body {
 }
 
 .container {
-  @apply w-full max-w-[1300px] mx-auto px-5 lg:mx-3;
+  @apply w-full max-w-[1300px] mx-auto px-5 lg:px-3;
 }
 
-.btn-display {
-  width: auto;
-  height: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  color: var(--white);
-  border: 1px solid var(--borderColor);
+.btn-header {
+  @apply flex justify-center items-center   border border-borderColor;
 }
