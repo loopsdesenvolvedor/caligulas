@@ -1,7 +1,14 @@
-import { Theme, theme } from "./theme";
 
-type Breakpoints = (typeof theme.breakpoints)[keyof typeof theme.breakpoints];
+export const breakpoints = {
+  sm: "768px",
+  md: "920px",
+  lg: "1200px",
+  xl: "1440px",
+
+} as const; 
+
+type Breakpoints = keyof typeof breakpoints; 
 
 export const breakAt = (size: Breakpoints): string => {
-  return `@media (min-width: ${size})`;
+  return `@media (min-width: ${breakpoints[size]})`; 
 };
