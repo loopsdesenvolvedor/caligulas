@@ -5,6 +5,8 @@ import StyledComponentsRegistry from "@/lib/registry";
 import ThemeProvider from "@/lib/ThemeProvider";
 import GlobalStyle from "@/styles/GlobalStyle";
 
+import Header from "@/components/header";
+
 const poppins = Poppins({
   variable: "--font-poppins-sans",
   subsets: ["latin"],
@@ -30,6 +32,7 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           <ThemeProvider>
             <GlobalStyle />
+            <Header />
             {children}
           </ThemeProvider>
         </StyledComponentsRegistry>
