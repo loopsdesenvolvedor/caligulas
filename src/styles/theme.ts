@@ -1,4 +1,4 @@
-import { text } from "stream/consumers";
+'use client'
 
 export const theme = {
   colors: {
