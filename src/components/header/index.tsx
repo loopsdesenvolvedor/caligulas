@@ -1,5 +1,7 @@
 import * as S from "./styles";
 
+import DropdownItem from "../dropdownItem";
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,10 +13,13 @@ const Header = () => {
   return (
     <S.Header>
       <S.Root>
-        <S.Button>
-          <TbMenu color="#fff" size={24} />
-          <span>Menu</span>
-        </S.Button>
+        <DropdownItem
+          type="button"
+          text="Menu"
+          icon={<TbMenu color="#fff" size={24} />}
+          className="menu"
+        />
+
         <Link href="/" className="logo">
           <Image
             src="/logo.svg"
@@ -25,14 +30,18 @@ const Header = () => {
         </Link>
 
         <S.NavigationRight>
-          <S.Button>
-            <MdFavorite color="#A90015" size={18} />
-            <span>Favoritos</span>
-          </S.Button>
-          <S.Button>
-            <FaUserAlt color="#fff" size={16} />
-            <span>Entrar</span>
-          </S.Button>
+          <DropdownItem
+            type="button"
+            text="Favoritos"
+            icon={<MdFavorite color="#A90015" size={18} />}
+            className="favorite"
+          />
+          <DropdownItem
+            type="button"
+            text="Entrar"
+            icon={<FaUserAlt color="#FFF" size={16} />}
+            className="user"
+          />
         </S.NavigationRight>
       </S.Root>
     </S.Header>
