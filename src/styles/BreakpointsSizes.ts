@@ -1,14 +1,7 @@
-// Tipando Breakpoints com um objeto literal
-export const Breakpoints: Record<'sm' | 'md' | 'lg' | 'xl', number> = {
-    sm: 600,
-    md: 960,
-    lg: 1200,
-    xl: 1440,
-  };
-  
+import { Theme, theme } from "./theme";
 
-  export const breakAt = (size: keyof typeof Breakpoints): string => {
-    const breakpointValue = Breakpoints[size];  
-    return `@media (min-width: ${breakpointValue}px)`;
-  };
-  
+type Breakpoints = (typeof theme.breakpoints)[keyof typeof theme.breakpoints];
+
+export const breakAt = (size: Breakpoints): string => {
+  return `@media (min-width: ${size})`;
+};
