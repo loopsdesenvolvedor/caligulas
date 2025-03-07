@@ -5,11 +5,17 @@ import { breakAt } from "@/styles/BreakpointsSizes";
 
 export const Header = styled.header`
   width: 100%;
-  height: auto;
+  height: 12.4rem;
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
 `;
 
 export const Root = styled.div`
+  margin-top: 2rem;
   width: 100%;
   height: 6.8rem;
   display: flex;
@@ -28,6 +34,63 @@ export const Root = styled.div`
       margin-left: 1.6rem;
     }
   }
+`;
+
+export const FormSearch = styled.form`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 2rem 0;
+  padding: 0 2rem;
+
+  div.form-content {
+    width: 100%;
+    height: 3.2rem;
+    display: flex;
+    position: relative;
+
+    .submit {
+      border: 0;
+      background-color: transparent;
+      position: absolute;
+      right: 1rem;
+    }
+  }
+
+  ${breakAt("sm")} {
+    max-width: 38.8rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  ${breakAt("md")} {
+    max-width: 48.8rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+`;
+
+export const DropdownGender = styled.div`
+  width: 100%;
+  max-width: 9.5rem;
+  height: 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1.4rem;
+  background-color: ${({ theme }) => theme.colors.red};
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin: 0;
+  margin-left: 1rem;
+  cursor: pointer;
 `;
 
 export const NavigationRight = styled.nav`

@@ -1,6 +1,7 @@
 import * as S from "./styles";
 
 import DropdownItem from "../dropdownItem";
+import Input from "../input";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -8,6 +9,8 @@ import Image from "next/image";
 import { TbMenu } from "react-icons/tb";
 import { MdFavorite } from "react-icons/md";
 import { FaUserAlt } from "react-icons/fa";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { IoIosSearch } from "react-icons/io";
 
 const Header = () => {
   return (
@@ -32,17 +35,31 @@ const Header = () => {
           <DropdownItem
             type="button"
             text="Favoritos"
-            icon={<MdFavorite color="#A90015" size={18} />}
+            icon={<MdFavorite color="#A90015" size={16} />}
             className="favorite"
           />
           <DropdownItem
             type="button"
             text="Entrar"
-            icon={<FaUserAlt color="#FFF" size={16} />}
+            icon={<FaUserAlt color="#FFF" size={14} />}
             className="user"
           />
         </S.NavigationRight>
       </S.Root>
+      <S.FormSearch>
+        <div className="form-content">
+          <S.DropdownGender>
+            <span>Hetero</span>
+            <IoMdArrowDropdown color="#fff" size={16} />
+          </S.DropdownGender>
+          <Input type="text" placeholder="Faça sua busca..." />
+          <DropdownItem
+            type="submit"
+            icon={<IoIosSearch color="#fff" size={16} />}
+            className="submit"
+          />
+        </div>
+      </S.FormSearch>
     </S.Header>
   );
 };
