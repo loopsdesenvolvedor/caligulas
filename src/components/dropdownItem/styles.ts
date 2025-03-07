@@ -42,7 +42,7 @@ export const Button = styled.div`
       font-size: 1.4rem;
     }
 
-    ${breakAt("sm")} {
+    ${breakAt("md")} {
       width: 10.1rem;
       span {
         display: flex;
@@ -61,7 +61,7 @@ export const Button = styled.div`
       font-size: 1.4rem;
     }
 
-    ${breakAt("sm")} {
+    ${breakAt("md")} {
       width: 10.1rem;
       span {
         display: flex;
