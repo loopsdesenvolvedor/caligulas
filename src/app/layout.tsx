@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
+import AuthProvider from "@/providers/AuthProvider";
 import StyledComponentsRegistry from "@/lib/registry";
-import ThemeProvider from "@/lib/ThemeProvider";
+import ThemeProvider from "@/providers/ThemeProvider";
+
 import GlobalStyle from "@/styles/GlobalStyle";
 
 import Header from "@/components/header";
@@ -32,8 +34,10 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           <ThemeProvider>
             <GlobalStyle />
-            <Header />
-            {children}
+            <AuthProvider>
+              <Header />
+              {children}
+            </AuthProvider>
           </ThemeProvider>
         </StyledComponentsRegistry>
       </body>
