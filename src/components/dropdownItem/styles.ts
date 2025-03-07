@@ -5,7 +5,7 @@ import { breakAt } from "@/styles/BreakpointsSizes";
 
 export const Button = styled.div`
   button {
-    width: 10.1;
+    width: 3.6rem;
     height: 3.2rem;
     display: flex;
     justify-content: center;
@@ -13,7 +13,7 @@ export const Button = styled.div`
     border-radius: 4px;
     border: 1px solid ${({ theme }) => theme.colors.border};
     background-color: ${({ theme }) => theme.colors.background};
-    gap: 1rem;
+
     cursor: pointer;
 
     span {
@@ -24,7 +24,6 @@ export const Button = styled.div`
     }
 
     ${breakAt("sm")} {
-      padding: 0 1rem;
       .logo {
         margin-right: auto;
         margin-left: 2rem;
@@ -33,6 +32,7 @@ export const Button = styled.div`
   }
 
   .favorite {
+    gap: 1rem;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 
@@ -43,6 +43,7 @@ export const Button = styled.div`
     }
 
     ${breakAt("sm")} {
+      width: 10.1rem;
       span {
         display: flex;
       }
@@ -50,6 +51,7 @@ export const Button = styled.div`
   }
 
   .user {
+    gap: 1rem;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 
@@ -60,6 +62,7 @@ export const Button = styled.div`
     }
 
     ${breakAt("sm")} {
+      width: 10.1rem;
       span {
         display: flex;
       }

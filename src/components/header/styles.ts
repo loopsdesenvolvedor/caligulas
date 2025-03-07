@@ -34,4 +34,9 @@ export const NavigationRight = styled.nav`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 1rem;
+
+  ${breakAt("sm")} {
+    gap: 0;
+  }
 `;

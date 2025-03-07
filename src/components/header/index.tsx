@@ -15,7 +15,6 @@ const Header = () => {
       <S.Root>
         <DropdownItem
           type="button"
-          text="Menu"
           icon={<TbMenu color="#fff" size={24} />}
           className="menu"
         />
