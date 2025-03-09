@@ -12,6 +12,9 @@ export const Header = styled.header`
   justify-content: center;
   gap: 2rem;
   position: relative;
+  ${breakAt("sm")} {
+    height: 8rem;
+  }
 `;
 
 export const Root = styled.div`
@@ -21,7 +24,6 @@ export const Root = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
 
   ${breakAt("sm")} {
     width: 100%;
@@ -38,14 +40,13 @@ export const Root = styled.div`
 
 export const FormSearch = styled.form`
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 0 2rem 0;
-  padding: 0 2rem;
 
-  div.form-content {
+  .form-content {
     width: 100%;
     height: 3.2rem;
     display: flex;
@@ -62,17 +63,15 @@ export const FormSearch = styled.form`
   ${breakAt("sm")} {
     max-width: 38.8rem;
     position: absolute;
+    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    margin: 0 auto;
+    margin: auto;
   }
 
   ${breakAt("md")} {
     max-width: 48.8rem;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
   }
 `;
 
@@ -89,7 +88,7 @@ export const DropdownGender = styled.div`
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   margin: 0;
-  margin-left: 1rem;
+
   cursor: pointer;
 `;
 
