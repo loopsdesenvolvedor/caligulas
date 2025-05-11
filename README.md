@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Caligula's
 
-## Getting Started
+**Caligula's** é uma plataforma de conteúdo adulto que oferece vídeos tradicionais, curtas (shorts) e transmissões ao vivo (lives). Em breve, permitirá que usuários criem contas, publiquem seus próprios conteúdos e interajam com criadores por meio de mensagens privadas e conteúdo exclusivo.
 
-First, run the development server:
+## 🧠 Visão Geral
+
+- Plataforma moderna e responsiva com foco em performance e escalabilidade.
+- Suporte a vídeos longos e curtos.
+- Funcionalidade de lives (ao vivo).
+- Sistema de autenticação e perfis personalizados.
+- Monetização com cobrança por vídeo e mensagens premium.
+- Espaço colaborativo para criadores de conteúdo.
+
+## 🚀 Tecnologias Utilizadas
+
+| Tecnologia                                    | Uso                                  |
+| --------------------------------------------- | ------------------------------------ |
+| [Next.js](https://nextjs.org/)                | Frontend e Backend (Fullstack React) |
+| [NextAuth.js](https://next-auth.js.org/)      | Autenticação de usuários             |
+| [Tailwind CSS](https://tailwindcss.com/)      | Estilização moderna e responsiva     |
+| [Redux](https://redux.js.org/)                | Gerenciamento de estado              |
+| [Multer](https://github.com/expressjs/multer) | Upload de arquivos (vídeos, imagens) |
+| API de Pagamentos (Stripe/Pix/etc)            | Monetização e transações seguras     |
+
+Outras tecnologias e bibliotecas poderão ser integradas conforme a necessidade do projeto.
+
+## 📦 Funcionalidades Planejadas
+
+- [x] Upload e exibição de vídeos (longos e curtos)
+- [x] Sistema de autenticação e login
+- [ ] Área de criadores para envio de conteúdo
+- [ ] Transmissões ao vivo (live streaming)
+- [ ] Sistema de mensagens privadas com cobrança
+- [ ] Página de perfil com métricas e dados de interação
+- [ ] Sistema completo de pagamentos (por vídeo e por mensagem)
+- [ ] Moderação de conteúdo e termos de uso
+
+## 🛠️ Como Rodar o Projeto
+
+> Requisitos: Node.js, npm/yarn, banco de dados (ex: PostgreSQL ou MongoDB), e chaves de API (NextAuth, Stripe, etc).
+
+1. Clone o repositório:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/seu-usuario/caligulas.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+npm install
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# ou
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+yarn install
 
-## Learn More
+npm run dev
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Estrutura do Projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+/src
+├── app/ - Sistema de rotas com App Router (layouts, pages, loading, etc.)
+├── components/ - Componentes reutilizáveis da interface
+├── styles/ - Estilos globais e utilitários com Tailwind CSS
+├── lib/ - Funções auxiliares e integrações com APIs externas
+├── store/ - Configuração do Redux e slices
+├── utils/ - Funções utilitárias gerais
+├── middleware.ts - Middlewares globais (auth, logs, etc)
+├── hooks/ - Custom React hooks
+├── types/ - Tipagens TypeScript compartilhadas
+/public - Arquivos públicos (imagens, vídeos, favicon, etc.)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤝 Contribuindo
 
-## Deploy on Vercel
+Contribuições são bem-vindas! Sinta-se à vontade para abrir Issues e Pull Requests. Por favor, siga o padrão de código e as boas práticas do projeto.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 Licença
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Este projeto está licenciado sob a Licença MIT.
