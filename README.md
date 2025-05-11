@@ -55,6 +55,7 @@ npm run dev
 
 ## 📁 Estrutura do Projeto
 
+```
 /src
 ├── app/ - Sistema de rotas com App Router (layouts, pages, loading, etc.)
 ├── components/ - Componentes reutilizáveis da interface
@@ -66,6 +67,7 @@ npm run dev
 ├── hooks/ - Custom React hooks
 ├── types/ - Tipagens TypeScript compartilhadas
 /public - Arquivos públicos (imagens, vídeos, favicon, etc.)
+```
 
 ## 🤝 Contribuindo
 
