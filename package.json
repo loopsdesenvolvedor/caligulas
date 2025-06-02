@@ -1,0 +1,26 @@
+{
+  "name": "caligulas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tsc-watch --onSuccess \"node --env-file=.env ./lib/index.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@prisma/client": "^6.8.2",
+    "@tsconfig/recommended": "^1.0.8",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "tsc-watch": "^7.1.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.29",
+    "prisma": "^6.8.2",
+    "typescript": "^5.8.3"
+  }
+}
