@@ -1,0 +1,41 @@
+#header {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--color-border);
+}
+
+#header > div {
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header > div > div {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+#header > div > div > button {
+  background-color: transparent;
+  border: none;
+}
+
+#header > div > button {
+  width: 8.9rem;
+  height: 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--background-components);
+  border: 1px solid var(--color-border);
+  color: var(--text);
+  border-radius: 0.4rem;
+  transition: 0.3s;
+}
+
+#header > div > button:hover {
+  background-color: var(--color-red);
+}
