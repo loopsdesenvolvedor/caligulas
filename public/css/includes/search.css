@@ -1,0 +1,34 @@
+#search {
+  width: 100%;
+  height: auto;
+}
+
+#search > form {
+  width: 100%;
+  height: 3.6rem;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 0.4rem;
+  border: none;
+}
+
+#search > form > input {
+  width: 100%;
+  height: 100%;
+  padding-left: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--background);
+  outline: none;
+  border-radius: inherit;
+  border: inherit;
+}
+
+#search > form > button {
+  position: absolute;
+  top: 0;
+  right: 1.2rem;
+  bottom: 0;
+  background-color: transparent;
+  border: inherit;
+}
