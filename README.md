@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Caligulas
 
-## Getting Started
+Projeto web com frontend em **Next.js 15** e backend em **Express.js** usando **TypeScript** e outras tecnologias modernas de JavaScript.
 
-First, run the development server:
+---
+
+## Aviso de Conteúdo Adulto
+
+Este site contém conteúdo adulto e é destinado exclusivamente para maiores de 18 anos. Ao acessar ou usar este site, você declara que tem 18 anos ou mais e concorda em seguir todas as leis aplicáveis relacionadas a conteúdo adulto em sua jurisdição.
+
+Se você for menor de 18 anos, por favor, não acesse este site.
+
+---
+
+## Design
+
+O design do projeto ainda está em desenvolvimento. Você pode acompanhar o progresso e visualizar os protótipos no Figma:
+
+[Figma - Projeto Caligulas](https://www.figma.com/design/6pijIBjw9o4TpmQ72R0KTc/Caligulas?node-id=490-2&p=f&t=k5dnBWOFHNCCxeYX-0)
+
+---
+
+## Estrutura do Projeto
+
+- **Frontend:** Next.js 15 (App Router) — SSR, rotas, otimização e recursos nativos do Next.
+- **Backend:** Express.js com TypeScript — API REST, upload de arquivos, autenticação e lógica de negócio.
+- Outras tecnologias: Prisma (ORM), Multer (upload), CORS, tsc-watch para hot reload e mais.
+
+---
+
+## Como rodar
+
+### Frontend (Next.js)
 
 ```bash
+cd caligulas
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Backend (API)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd caligulas/backend
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Tecnologias usadas
 
-To learn more about Next.js, take a look at the following resources:
+- Frontend: Next.js 15, React, TypeScript, Tailwind CSS (se estiver usando)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Backend: Express.js, TypeScript, Prisma, Multer, CORS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Ferramentas: tsc-watch, npm, Node.js
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Links úteis
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js Docs](https://nextjs.org/docs)
+- [Express Docs](https://expressjs.com/)
+- [Prisma Docs](https://www.prisma.io/docs/)
+- [Multer Docs](https://github.com/expressjs/multer)
+- [Figma Projeto Caligulas](https://www.figma.com/design/6pijIBjw9o4TpmQ72R0KTc/Caligulas?node-id=490-2&p=f&t=k5dnBWOFHNCCxeYX-0)
+
+---
+
+## Como contribuir
+
+- Contribuições são bem-vindas! Você pode:
+
+  - Abrir issues para reportar bugs ou sugerir melhorias
+
+  - Enviar pull requests com correções ou novos recursos
+
+  - Compartilhar feedback para ajudar no desenvolvimento
