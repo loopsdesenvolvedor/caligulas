@@ -1,0 +1,37 @@
+model User {
+  id       String  @id @default(cuid())
+  name     String?
+  username String? @unique
+  email    String  @unique
+  password String
+  avatar   String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  posts     Post[]
+}
+
+model Category {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  posts     Post[]   @relation("PostCategories")
+
+  @@map("categories")
+}
+
+model Post {
+  id          String     @id @default(cuid())
+  title       String
+  description String
+  thumbnail   String
+  userId      String
+  users       User       @relation(fields: [userId], references: [id])
+  categories  Category[] @relation("PostCategories")
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@map("posts")
+}
