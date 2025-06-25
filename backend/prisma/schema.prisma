@@ -3,17 +3,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id       String  @id @default(cuid())
-  name     String?
-  username String? @unique
-  email    String  @unique
-  password String
-  avatar   String?
+generator client {
+  provider = "prisma-client-js"
+}
 
+model User {
+  id        String   @id @default(cuid())
+  name      String?
+  username  String?
+  email     String
+  password  String
+  avatar    String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   posts     Post[]
+
+  @@map("user")
 }
 
 model Category {
@@ -22,7 +27,7 @@ model Category {
   slug      String   @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  posts     Post[]   @relation("PostCategories")
+  posts     Post[]   @relation("postcategories")
 
   @@map("categories")
 }
@@ -33,10 +38,10 @@ model Post {
   description String
   thumbnail   String
   userId      String
-  users       User       @relation(fields: [userId], references: [id])
-  categories  Category[] @relation("PostCategories")
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
+  users       User       @relation(fields: [userId], references: [id])
+  categories  Category[] @relation("postcategories")
 
   @@map("posts")
 }
