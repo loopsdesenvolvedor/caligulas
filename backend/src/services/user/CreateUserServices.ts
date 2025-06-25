@@ -1,16 +1,10 @@
 import prisma from "../../lib/prisma";
 import { hash } from "bcrypt";
 
-type Types = {
-  name: string;
-  username: string;
-  email: string;
-  password: string;
-  avatar?: string;
-};
+import { CreateUserInput } from "../../@types/User";
 
 class CreateUserService {
-  async execute({ name, username, email, password, avatar }: Types) {
+  async execute({ name, username, email, password, avatar }: CreateUserInput) {
     const userAlreadyExists = await prisma.user.findFirst({
       where: { email },
     });
