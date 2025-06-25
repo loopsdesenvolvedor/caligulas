@@ -15,7 +15,7 @@ class CreateUserController {
       avatar,
     });
 
-    return res.json(user);
+    res.json(user);
   }
 }
 
