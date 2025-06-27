@@ -5,3 +5,8 @@ export type CreateUserInput = {
   password: string;
   avatar?: string;
 };
+
+export type AuthRequest = {
+  email: string;
+  password: string;
+};
