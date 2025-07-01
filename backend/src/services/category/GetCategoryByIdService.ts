@@ -5,6 +5,11 @@ class GetCategoryByIdService {
   async execute({ id }: GetCategoryPayload) {
     const category = await prisma.category.findUnique({
       where: { id },
+      select: {
+        id: true,
+        name: true,
+        slug: true,
+      },
     });
 
     if (!category) {
