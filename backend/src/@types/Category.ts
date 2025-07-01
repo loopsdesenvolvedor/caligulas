@@ -1,5 +1,6 @@
-export type CreateCategoryInput = {
+export type CategoryInput = {
   name: string;
+  id?: string;
 };
 
 export type GetCategoryPayload = {
