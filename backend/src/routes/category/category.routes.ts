@@ -3,6 +3,7 @@ import { CreateCategoryController } from "../../controllers/category/CreateCateg
 import { isAuthenticate } from "../../middlewares/isAuthenticate";
 import { GetAllCategoryController } from "../../controllers/category/GetAllCategoryController";
 import { GetCategoryByIdController } from "../../controllers/category/GetCategoryByIdController";
+import { EditCategoryController } from "../../controllers/category/EditCategoryController";
 
 const categoryRoutes = Router();
 
@@ -14,5 +15,6 @@ categoryRoutes.post(
 
 categoryRoutes.get("/categories", new GetAllCategoryController().handle);
 categoryRoutes.get("/category/:id", new GetCategoryByIdController().handle);
+categoryRoutes.put("/category/:id", new EditCategoryController().handle);
 
 export { categoryRoutes };
