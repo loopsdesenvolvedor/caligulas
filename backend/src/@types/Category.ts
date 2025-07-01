@@ -1,5 +1,5 @@
 export type CategoryInput = {
-  name: string;
+  name?: string;
   id?: string;
 };
 
