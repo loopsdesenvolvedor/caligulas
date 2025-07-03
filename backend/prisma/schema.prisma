@@ -32,16 +32,23 @@ model Category {
   @@map("categories")
 }
 
+enum PostType {
+  VIDEO
+  BLOG
+}
+
 model Post {
   id          String     @id @default(cuid())
   title       String
+  slug        String     @unique
   description String
+  content     String
   thumbnail   String
+  published   Boolean    @default(false)
+  type        PostType   @default(BLOG)
   userId      String
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
-  users       User       @relation(fields: [userId], references: [id])
+  user        User       @relation(fields: [userId], references: [id])
   categories  Category[] @relation("postcategories")
-
-  @@map("posts")
 }
