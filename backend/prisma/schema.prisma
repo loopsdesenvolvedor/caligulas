@@ -45,7 +45,7 @@ model Post {
   content     String
   thumbnail   String
   published   Boolean    @default(false)
-  type        PostType   @default(BLOG)
+  type        PostType   @default(VIDEO)
   userId      String
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
