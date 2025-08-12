@@ -18,6 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <html lang="pt-BR">
       <body className={`${interSans.variable} antialiased`}>
         <Header />
         {children}
