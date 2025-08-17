@@ -11,6 +11,7 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-components: var(--background-components);
   --color-foreground: var(--foreground);
   --color-red-default: var(--red-default);
   --color-yellow-default: var(--yellow-default);
