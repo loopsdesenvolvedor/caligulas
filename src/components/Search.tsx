@@ -1,11 +1,119 @@
+import { useDispatch } from "react-redux";
+import { AppDispach } from "@/store";
+import { toggleSearch } from "@/store/slices/searchSlice";
+
 import Input from "./Input";
 
+import { FiSearch } from "react-icons/fi";
+import Link from "next/link";
+
 const Search = () => {
+  const dispatch = useDispatch<AppDispach>();
   return (
-    <section className="absolute top-0 left-0" role="search">
-      <form>
-        <Input title="text" placeholder="Busque por um vídeo" />
-      </form>
+    <section
+      className="absolute top-0 left-0 w-full h-screen flex flex-col bg-background px-5 z-50"
+      role="search"
+    >
+      <div className="w-full h-[60px] flex justify-between items-center gap-2.5">
+        <form className="w-full  flex  justify-between items-center relative">
+          <Input
+            type="text"
+            placeholder="Busque por um vídeo"
+            className="w-full h-9  bg-background-components rounded-full px-3 text-sm font-normal outline-none"
+          />
+          <button className="absolute top-0 bottom-0 my-auto right-3 cursor-pointer">
+            <FiSearch size={18} />
+          </button>
+        </form>
+        <button
+          onClick={() => dispatch(toggleSearch())}
+          className="w-auto h-9 px-3  bg-background-components text-xs text-white uppercase rounded-full cursor-pointer"
+        >
+          Cancelar
+        </button>
+      </div>
+      <div>
+        <h2 className="text-[18px] my-[24px] font-semibold tracking-[0.5px]">
+          🔥 Pequisas quentes
+        </h2>
+
+        <ul className="flex flex-col gap-4 pl-10">
+          <li>
+            <Link
+              className="text-sm font-normal underline opacity-75 hover:opacity-100 transition-all duration-300"
+              href="/"
+            >
+              Pornô amador
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="text-sm font-normal underline opacity-75 hover:opacity-100 transition-all duration-300"
+              href="/"
+            >
+              Cornô feliz
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="text-sm font-normal underline opacity-75 hover:opacity-100 transition-all duration-300"
+              href="/"
+            >
+              Cornô feliz
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="text-sm font-normal underline opacity-75 hover:opacity-100 transition-all duration-300"
+              href="/"
+            >
+              Famosas do Tiktok
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="text-sm font-normal underline opacity-75 hover:opacity-100 transition-all duration-300"
+              href="/"
+            >
+              Cornô feliz
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="text-sm font-normal underline opacity-75 hover:opacity-100 transition-all duration-300"
+              href="/"
+            >
+              Pornô amador
+            </Link>
+          </li>
+          <li>
+            <Link className="text-sm font-normal underline opacity-75" href="/">
+              Famosas do Tiktok
+            </Link>
+          </li>
+          <li>
+            <Link className="text-sm font-normal underline opacity-75" href="/">
+              Cornô feliz
+            </Link>
+          </li>
+          <li>
+            <Link className="text-sm font-normal underline opacity-75" href="/">
+              Pornô amador
+            </Link>
+          </li>
+          <li>
+            <Link className="text-sm font-normal underline opacity-75" href="/">
+              Cornô feliz
+            </Link>
+          </li>
+        </ul>
+        <Link
+          className="w-full h-12 mt-[24px] flex justify-center items-center rounded bg-red-default text-[16px] font-semibold text-white"
+          href="/"
+        >
+          Pesquisar por categoria
+        </Link>
+      </div>
     </section>
   );
 };

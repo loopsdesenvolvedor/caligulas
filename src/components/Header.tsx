@@ -9,21 +9,21 @@ import { FiSearch } from "react-icons/fi";
 import { FaCircleUser } from "react-icons/fa6";
 
 import Search from "./Search";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispach, RootState } from "@/store";
+import { toggleSearch } from "@/store/slices/searchSlice";
 
 const Header = () => {
-  const [showSearch, setShowSearch] = useState(false);
+  const dispach = useDispatch<AppDispach>();
+  const isOpen = useSelector((state: RootState) => state.toggleSearch.isOpen);
 
-  function toggleSearch() {
-    setShowSearch((prev) => !prev);
-  }
   return (
     <header className="w-full h-auto border-b border-border-default">
       <Container>
         <nav className="w-full h-[60px] px-5 flex justify-between items-center">
-          {showSearch && <Search />}
+          {isOpen && <Search />}
           <div className="flex justify-start items-center gap-6">
-            <button type="button">
+            <button type="button" className="cursor-pointer">
               <HiOutlineMenuAlt4 size={30} />
             </button>
             <Image
@@ -33,10 +33,13 @@ const Header = () => {
             />
           </div>
           <div className="flex justify-end items-center gap-8">
-            <button onClick={toggleSearch}>
+            <button
+              onClick={() => dispach(toggleSearch())}
+              className="cursor-pointer"
+            >
               <FiSearch size={22} />
             </button>
-            <button>
+            <button className="cursor-pointer">
               <FaCircleUser size={22} />
             </button>
           </div>
