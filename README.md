@@ -21,8 +21,9 @@ O projeto inclui:
 
 ## Tecnologias
 
-- **Frontend:** Next.js, Tailwind CSS, React  
-- **Backend:** Node.js com Express, Strapi CMS  
+- **Frontend:** Next.js, Tailwind CSS, React
+- **Backend:** Next.js
+- **Pagamentos:** Strapi CMS  
 - **Autenticação:** NextAuth  
 - **Banco de Dados:** PostgreSQL  
 - **Design e Prototipagem:** Figma  
@@ -41,20 +42,4 @@ O projeto inclui:
 
 ---
 
-## Estrutura do Projeto
-
-```text
-/caligulas
-├─ /frontend           # Next.js app
-│  ├─ /pages
-│  ├─ /components
-│  └─ /styles
-├─ /backend            # Node.js + Strapi
-│  ├─ /controllers
-│  ├─ /models
-│  └─ /routes
-├─ /database           # Scripts e config PostgreSQL
-└─ README.md
-
-
-### Continua ....
+### Continua no futuro....
