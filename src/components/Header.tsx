@@ -12,6 +12,7 @@ import Search from "./Search";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispach, RootState } from "@/store";
 import { toggleSearch } from "@/store/slices/searchSlice";
+import Form from "./Form";
 
 const Header = () => {
   const dispach = useDispatch<AppDispach>();
@@ -20,7 +21,7 @@ const Header = () => {
   return (
     <header className="w-full h-auto border-b border-border-default">
       <Container>
-        <nav className="w-full h-[60px] px-5 flex justify-between items-center">
+        <nav className="w-full h-[60px] md:h-[80px] px-5 flex justify-between items-center">
           {isOpen && <Search />}
           <div className="flex justify-start items-center gap-6">
             <button type="button" className="cursor-pointer">
@@ -32,10 +33,13 @@ const Header = () => {
               alt="Logo Caligula's"
             />
           </div>
+          <div className="hidden relative w-full max-w-[500px] md:flex  justify-center items-center">
+            <Form />
+          </div>
           <div className="flex justify-end items-center gap-8">
             <button
               onClick={() => dispach(toggleSearch())}
-              className="cursor-pointer"
+              className="cursor-pointer md:hidden"
             >
               <FiSearch size={22} />
             </button>
