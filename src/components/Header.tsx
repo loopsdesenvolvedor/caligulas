@@ -1,6 +1,6 @@
 "use client";
 
-import Container from "./Container";
+import Container from "./styles/Container";
 import Image from "next/image";
 
 import logo from "../../public/caligulas.svg";
@@ -8,11 +8,11 @@ import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { FiSearch } from "react-icons/fi";
 import { FaCircleUser } from "react-icons/fa6";
 
-import Search from "./Search";
+import Search from "./utils/Search";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispach, RootState } from "@/store";
 import { toggleSearch } from "@/store/slices/searchSlice";
-import Form from "./Form";
+import Form from "./utils/Form";
 
 const Header = () => {
   const dispach = useDispatch<AppDispach>();
