@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.css";
+
+import Header from "@/components/Header";
+import { ReduxProvider } from "@/providers/ReduxProvider";
 
 const interSans = Inter({
   variable: "--font-inter-sans",
@@ -19,7 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${interSans.variable} antialiased`}>{children}</body>
+      <body className={`${interSans.variable} antialiased`}>
+        <ReduxProvider>
+          <Header />
+        </ReduxProvider>
+        {children}
+      </body>
     </html>
   );
 }

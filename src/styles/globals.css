@@ -6,6 +6,7 @@
   --yellow: #ffc107;
   --red: #a90015;
   --components-bg: #12191f;
+  --border: rgba(255, 255, 255, 0.04);
 }
 
 @theme inline {
@@ -13,6 +14,7 @@
   --color-foreground: var(--foreground);
   --color-yellow: var(--yellow);
   --color-red: var(--red);
+  --color-border: var(--border);
   --color-components-bg: var(--components-bg);
   --font-sans: var(--font-inter-sans);
 }
