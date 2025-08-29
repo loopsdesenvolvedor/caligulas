@@ -1,5 +1,5 @@
 import Container from "@/styles/Container";
-import HeaderActions from "./HeaderActions";
+import HeaderActions from "@/components/ui/HeaderActions";
 
 const Header = () => {
   return (
