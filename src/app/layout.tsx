@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
 
-import Header from "@/components/Header";
+import Header from "@/components/ui/Header";
 import { ReduxProvider } from "@/providers/ReduxProvider";
 
 const interSans = Inter({

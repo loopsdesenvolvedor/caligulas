@@ -1,7 +1,7 @@
 "use client";
 
-import Logo from "./Logo";
-import ButtonWithIcon from "./ButtonWithIcon";
+import Logo from "@/components/ui/Logo";
+import ButtonWithIcon from "@/components/shared/ButtonWithIcon";
 
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { MdFavorite } from "react-icons/md";
