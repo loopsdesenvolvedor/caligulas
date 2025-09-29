@@ -1,7 +1,7 @@
 import prisma from "../../lib/prisma.js";
 import { hash } from "bcryptjs";
 
-import type { CreateUserProps, UpdateUserProps } from "../../@types/User.js";
+  DeleteUserProps,
 
 class UserService {
   async create({ name, email, password }: CreateUserProps) {
@@ -54,6 +54,19 @@ class UserService {
         id: true,
         name: true,
         email: true,
+      },
+    });
+
+    return user;
+  }
+  async delete({ id }: DeleteUserProps) {
+    if (!id) {
+      throw new Error("ID é obrigatório.");
+    }
+
+    const user = await prisma.user.delete({
+      where: {
+        id,
       },
     });
 

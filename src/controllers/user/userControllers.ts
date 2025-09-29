@@ -35,6 +35,22 @@ class UserController extends BaseController {
       });
     }
   }
+
+  async delete() {
+    try {
+      const id = this.req.params.id as string;
+      const deleteUserService = new UserServices();
+      const user = await deleteUserService.delete({ id });
+
+      return this.res.status(200).json({
+        message: "Usuário deletado com sucesso.",
+      });
+    } catch (error: any) {
+      this.res.status(400).json({
+        message: error.message || "Erro ao deletar usuário",
+      });
+    }
+  }
 }
 
 export { UserController };

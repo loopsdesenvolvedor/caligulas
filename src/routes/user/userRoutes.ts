@@ -8,7 +8,8 @@ userRoutes.post("/users", (req, res, next) => {
 });
 
 userRoutes.put("/users/:id", (req, res, next) => {
-  new UserController(req, res, next).update();
+userRoutes.delete("/users/:id", (req, res, next) => {
+  new UserControllers(req, res, next).delete();
 });
 
 export default userRoutes;
