@@ -1,7 +1,7 @@
 import prisma from "../../lib/prisma.js";
 import { hash } from "bcryptjs";
 
-import type { CreateUserProps } from "../../@types/User.js";
+import type { CreateUserProps, UpdateUserProps } from "../../@types/User.js";
 
 class UserService {
   async create({ name, email, password }: CreateUserProps) {
@@ -34,6 +34,30 @@ class UserService {
     return {
       data: user,
     };
+  }
+
+  async update({ id, name, email, password }: UpdateUserProps) {
+    if (!id) {
+      throw new Error("ID é obrigatório.");
+    }
+
+    const passwordHash = await hash(password as string, 8);
+
+    const user = await prisma.user.update({
+      where: { id: id as string },
+      data: {
+        name: name as string,
+        email: email as string,
+        password: passwordHash,
+      },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+      },
+    });
+
+    return user;
   }
 }
 
