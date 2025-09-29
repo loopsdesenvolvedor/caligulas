@@ -1,11 +1,38 @@
 import { BaseController } from "../baseController.js";
-import { UserService } from "../../services/user/userServices.js";
+import { UserServices } from "../../services/user/userServices.js";
 
-class UserController extends BaseController {
+class UserControllers extends BaseController {
+  async getAll() {
+    try {
+      const getAllUsers = new UserServices();
+      const users = await getAllUsers.getAll();
+
+      return this.res.status(200).json(users);
+    } catch (error: any) {
+      this.res.status(400).json({
+        message: error.message || "Usuários não encontrado",
+      });
+    }
+  }
+
+  async getById() {
+    try {
+      const id = this.req.params.id as string;
+      const getUserById = new UserServices();
+      const user = await getUserById.getById({ id });
+
+      return this.res.status(200).json(user);
+    } catch (error: any) {
+      this.res.status(400).json({
+        message: error.message || "Erro ao encontrar o usuário",
+      });
+    }
+  }
+
   async create() {
     try {
       const { name, email, password } = this.req.body;
-      const userCreateService = new UserService();
+      const userCreateService = new UserServices();
       const user = await userCreateService.create({ name, email, password });
 
       return this.res.status(201).json(user);
@@ -20,7 +47,7 @@ class UserController extends BaseController {
     try {
       const id = this.req.params.id?.toString() as string;
       const { name, email, password } = this.req.body;
-      const userUpdateService = new UserService();
+      const userUpdateService = new UserServices();
       const user = await userUpdateService.update({
         id,
         name,
@@ -53,4 +80,4 @@ class UserController extends BaseController {
   }
 }
 
-export { UserController };
+export { UserControllers };

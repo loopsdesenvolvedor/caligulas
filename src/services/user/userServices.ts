@@ -1,9 +1,43 @@
 import prisma from "../../lib/prisma.js";
 import { hash } from "bcryptjs";
 
+import type {
+  CreateUserProps,
+  UpdateUserProps,
   DeleteUserProps,
+  GetUserByIdProps,
+} from "../../@types/User.js";
 
-class UserService {
+class UserServices {
+  async getAll() {
+    const users = await prisma.user.findMany();
+
+    if (!users) {
+      throw new Error("Nenhum usuário encontrado.");
+    }
+
+    return users;
+  }
+
+  async getById({ id }: GetUserByIdProps) {
+    if (!id) {
+      throw new Error("ID é obrigatório.");
+    }
+
+    const user = await prisma.user.findUnique({
+      where: {
+        id,
+      },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+      },
+    });
+
+    return user;
+  }
+
   async create({ name, email, password }: CreateUserProps) {
     if (!name || !email || !password)
       throw new Error("Todos os campos são obrigatórios.");
@@ -59,6 +93,7 @@ class UserService {
 
     return user;
   }
+
   async delete({ id }: DeleteUserProps) {
     if (!id) {
       throw new Error("ID é obrigatório.");
@@ -74,4 +109,4 @@ class UserService {
   }
 }
 
-export { UserService };
+export { UserServices };
