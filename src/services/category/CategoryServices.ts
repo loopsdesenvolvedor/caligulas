@@ -3,7 +3,9 @@ import prisma from "../../lib/prisma.js";
 
 class CategoryServices {
   async getAll() {
-    const cateories = await prisma.category.findMany();
+    const cateories = await prisma.category.findMany({
+      include: { posts: true },
+    });
 
     if (cateories.length === 0) {
       throw new Error("Nenhuma categoria encontrada");
