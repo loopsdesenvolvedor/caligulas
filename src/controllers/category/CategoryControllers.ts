@@ -17,6 +17,21 @@ class CategoryControllers extends BaseController {
     }
   }
 
+  async getById() {
+    try {
+      const id = this.req.params.id as string;
+
+      const categoryServices = new CategoryServices();
+      const category = await categoryServices.getById({ id });
+
+      return this.res.status(200).json(category);
+    } catch (error: any) {
+      this.res.status(400).json({
+        message: error.message || "Erro ao buscar a categoria",
+      });
+    }
+  }
+
   async create() {
     try {
       const { name } = this.req.body;

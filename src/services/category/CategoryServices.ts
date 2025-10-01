@@ -1,6 +1,7 @@
 import type {
   CreateCategoryProps,
   UpdateCategoryProps,
+  GetUserByIdProps,
 } from "../../@types/Category.js";
 import prisma from "../../lib/prisma.js";
 
@@ -15,6 +16,20 @@ class CategoryServices {
     }
 
     return cateories;
+  }
+
+  async getById({ id }: GetUserByIdProps) {
+    if (!id) {
+      throw new Error("ID é obrigatório");
+    }
+    const category = await prisma.category.findUnique({
+      where: { id },
+      include: {
+        posts: true,
+      },
+    });
+
+    return category;
   }
 
   async create({ name, slug }: CreateCategoryProps) {
