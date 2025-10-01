@@ -11,4 +11,8 @@ categoryRoutes.post("/category", (req, res, next) => {
   new CategoryControllers(req, res, next).create();
 });
 
+categoryRoutes.put("/category/:id", (req, res, next) => {
+  new CategoryControllers(req, res, next).update();
+});
+
 export { categoryRoutes };

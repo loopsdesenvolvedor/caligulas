@@ -34,7 +34,27 @@ class CategoryControllers extends BaseController {
       });
     }
   }
+
+  async update() {
+    try {
+      const id = this.req.params.id;
+      const { name } = this.req.body;
+
+      const slug = slugify(name) as string;
+      const categoryService = new CategoryServices();
+      const catgeory = await categoryService.update({
+        id: id as string,
+        name,
+        slug,
+      });
+
+      return this.res.status(200).json(catgeory);
+    } catch (error: any) {
+      this.res.status(400).json({
+        message: error.message || "Erro ao atualizar a categoria",
+      });
+    }
+  }
 }
 
 export { CategoryControllers };
- 
