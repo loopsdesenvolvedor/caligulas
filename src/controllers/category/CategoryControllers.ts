@@ -36,8 +36,8 @@ class CategoryControllers extends BaseController {
     try {
       const { name } = this.req.body;
 
-      const categoryService = new CategoryServices();
-      const category = await categoryService.create({
+      const categoryServices = new CategoryServices();
+      const category = await categoryServices.create({
         name,
         slug: slugify(name),
       });
@@ -56,8 +56,8 @@ class CategoryControllers extends BaseController {
       const { name } = this.req.body;
 
       const slug = slugify(name) as string;
-      const categoryService = new CategoryServices();
-      const catgeory = await categoryService.update({
+      const categoryServices = new CategoryServices();
+      const catgeory = await categoryServices.update({
         id: id as string,
         name,
         slug,
@@ -67,6 +67,20 @@ class CategoryControllers extends BaseController {
     } catch (error: any) {
       this.res.status(400).json({
         message: error.message || "Erro ao atualizar a categoria",
+      });
+    }
+  }
+
+  async delete() {
+    try {
+      const id = this.req.params.id as string;
+      const categoryServices = new CategoryServices();
+      const category = await categoryServices.delete({ id });
+
+      return this.res.status(200).json(category);
+    } catch (error: any) {
+      this.res.status(400).json({
+        message: error.message || "Erro ao excluir a categoria",
       });
     }
   }

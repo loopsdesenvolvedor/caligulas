@@ -19,4 +19,8 @@ categoryRoutes.put("/category/:id", (req, res, next) => {
   new CategoryControllers(req, res, next).update();
 });
 
+categoryRoutes.delete("/category/:id", (req, res, next) => {
+  new CategoryControllers(req, res, next).delete();
+});
+
 export { categoryRoutes };

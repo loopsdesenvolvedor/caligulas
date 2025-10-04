@@ -2,6 +2,7 @@ import type {
   CreateCategoryProps,
   UpdateCategoryProps,
   GetUserByIdProps,
+  DeleteUserProps,
 } from "../../@types/Category.js";
 import prisma from "../../lib/prisma.js";
 
@@ -66,6 +67,17 @@ class CategoryServices {
         slug: true,
       },
     });
+    return category;
+  }
+
+  async delete({ id }: DeleteUserProps) {
+    if (!id) {
+      throw new Error("ID é obrigatório");
+    }
+    const category = await prisma.category.delete({
+      where: { id },
+    });
+
     return category;
   }
 }
