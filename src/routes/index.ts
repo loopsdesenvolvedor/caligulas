@@ -7,16 +7,20 @@ import "express-async-errors";
 
 import userRoutes from "./user/userRoutes.js";
 import { categoryRoutes } from "./category/index.js";
+import { postRoutes } from "./post/index.js";
 
 export default (app: express.Express) => {
   app.use(express.json());
+  app.use("/files", express.static("uploads"));
   app.use(userRoutes);
   app.use(categoryRoutes);
+  app.use(postRoutes);
 
   app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-    if (err instanceof Error) res.status(400).json({ message: err.message });
+    if (err instanceof Error)
+      return res.status(400).json({ message: err.message });
 
-    res.status(500).json({
+    return res.status(500).json({
       status: "Error",
       message: "Internal server error",
     });

@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { CategoryControllers } from "../../controllers/category/CategoryControllers.js";
+import multer from "multer";
 
 const categoryRoutes = Router();
 
