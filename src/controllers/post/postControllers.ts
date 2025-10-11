@@ -9,6 +9,19 @@ class PostControllers extends BaseController {
     return this.res.status(200).json(posts);
   }
 
+  async getById() {
+    const id = this.req.params.id as string;
+
+    const postServices = new PostServices();
+    const post = await postServices.getById(id);
+
+    if (!post) {
+      return this.res.status(404).json({ error: "Post not found" });
+    }
+
+    return this.res.status(200).json(post);
+  }
+
   async create() {
     try {
       const { title, description, author, category } = this.req.body;

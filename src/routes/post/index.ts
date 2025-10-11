@@ -12,6 +12,9 @@ postRoutes.get("/posts", (req, res, next) => {
   new PostControllers(req, res, next).getAll();
 });
 
+postRoutes.get("/post/:id", (req, res, next) => {
+  new PostControllers(req, res, next).getById();
+});
 
 postRoutes.post(
   "/post",

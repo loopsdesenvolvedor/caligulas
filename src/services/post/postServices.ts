@@ -12,6 +12,17 @@ class PostServices {
 
     return posts;
   }
+  async getById(id: string) {
+    const post = await prisma.post.findUnique({
+      where: { id },
+      include: {
+        author: true,
+        category: true,
+      },
+    });
+
+    return post;
+  }
 
   async create({
     title,
