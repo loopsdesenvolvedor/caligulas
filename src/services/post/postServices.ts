@@ -12,6 +12,7 @@ class PostServices {
 
     return posts;
   }
+
   async getById(id: string) {
     const post = await prisma.post.findUnique({
       where: { id },
@@ -66,6 +67,14 @@ class PostServices {
     });
 
     return post;
+  }
+
+  async delete(id: string) {
+    await prisma.post.delete({
+      where: { id },
+    });
+
+    return;
   }
 }
 

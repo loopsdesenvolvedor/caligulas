@@ -5,13 +5,20 @@ import express, {
 } from "express";
 import "express-async-errors";
 
+import { resolve } from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 import userRoutes from "./user/userRoutes.js";
 import { categoryRoutes } from "./category/index.js";
 import { postRoutes } from "./post/index.js";
 
 export default (app: express.Express) => {
   app.use(express.json());
-  app.use("/files", express.static("uploads"));
+  app.use("/files", express.static(resolve(__dirname, "..", "..", "uploads")));
   app.use(userRoutes);
   app.use(categoryRoutes);
   app.use(postRoutes);

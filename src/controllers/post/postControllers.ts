@@ -57,6 +57,15 @@ class PostControllers extends BaseController {
         .json({ error: error.message || "Internal Server Error" });
     }
   }
+
+  async delete() {
+    const id = this.req.params.id as string;
+
+    const postServices = new PostServices();
+    await postServices.delete(id);
+
+    return this.res.status(204).send();
+  }
 }
 
 export { PostControllers };

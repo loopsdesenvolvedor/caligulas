@@ -1,13 +1,12 @@
 import { Router } from "express";
 
-import multer from "multer";
-
 import uploadConfig from "../../lib/multer.js";
 import { PostControllers } from "../../controllers/post/postControllers.js";
 
-const upload = multer(uploadConfig.upload("uploads/"));
+const upload = uploadConfig.upload();
 
 const postRoutes = Router();
+
 postRoutes.get("/posts", (req, res, next) => {
   new PostControllers(req, res, next).getAll();
 });
@@ -26,5 +25,9 @@ postRoutes.post(
     new PostControllers(req, res, next).create();
   }
 );
+
+postRoutes.delete("/post/:id", (req, res, next) => {
+  new PostControllers(req, res, next).delete();
+});
 
 export { postRoutes };
