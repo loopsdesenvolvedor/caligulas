@@ -8,6 +8,10 @@ import { PostControllers } from "../../controllers/post/postControllers.js";
 const upload = multer(uploadConfig.upload("uploads/"));
 
 const postRoutes = Router();
+postRoutes.get("/posts", (req, res, next) => {
+  new PostControllers(req, res, next).getAll();
+});
+
 
 postRoutes.post(
   "/post",

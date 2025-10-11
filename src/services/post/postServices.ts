@@ -2,6 +2,17 @@ import type { CreatePostProps } from "../../@types/Post.js";
 import prisma from "../../lib/prisma.js";
 
 class PostServices {
+  async getAll() {
+    const posts = await prisma.post.findMany({
+      include: {
+        author: true,
+        category: true,
+      },
+    });
+
+    return posts;
+  }
+
   async create({
     title,
     description,

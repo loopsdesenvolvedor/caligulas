@@ -2,6 +2,13 @@ import { PostServices } from "../../services/post/postServices.js";
 import { BaseController } from "../baseController.js";
 
 class PostControllers extends BaseController {
+  async getAll() {
+    const postServices = new PostServices();
+    const posts = await postServices.getAll();
+
+    return this.res.status(200).json(posts);
+  }
+
   async create() {
     try {
       const { title, description, author, category } = this.req.body;
