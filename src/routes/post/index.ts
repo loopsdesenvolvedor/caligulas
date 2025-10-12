@@ -26,6 +26,17 @@ postRoutes.post(
   }
 );
 
+postRoutes.put(
+  "/post/:id",
+  upload.fields([
+    { name: "image", maxCount: 1 },
+    { name: "video", maxCount: 1 },
+  ]),
+  (req, res, next) => {
+    new PostControllers(req, res, next).update();
+  }
+);
+
 postRoutes.delete("/post/:id", (req, res, next) => {
   new PostControllers(req, res, next).delete();
 });
