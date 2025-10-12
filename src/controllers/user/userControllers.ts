@@ -32,8 +32,24 @@ class UserControllers extends BaseController {
   async create() {
     try {
       const { name, email, password } = this.req.body;
+
+      let avatar: string | null = null;
+
+      if (this.req.files && !Array.isArray(this.req.files)) {
+        avatar = this.req.files.avatar?.[0]?.filename || null;
+      }
+
+      if (!avatar) {
+        return this.res.status(400).json({ error: "Avatar is required" });
+      }
+
       const userCreateService = new UserServices();
-      const user = await userCreateService.create({ name, email, password });
+      const user = await userCreateService.create({
+        name,
+        email,
+        password,
+        avatar,
+      });
 
       return this.res.status(201).json(user);
     } catch (error: any) {
@@ -47,12 +63,24 @@ class UserControllers extends BaseController {
     try {
       const id = this.req.params.id?.toString() as string;
       const { name, email, password } = this.req.body;
+
+      let avatar: string | null = null;
+
+      if (this.req.files && !Array.isArray(this.req.files)) {
+        avatar = this.req.files.avatar?.[0]?.filename || null;
+      }
+
+      if (!avatar) {
+        return this.res.status(400).json({ error: "Avatar is required" });
+      }
+
       const userUpdateService = new UserServices();
       const user = await userUpdateService.update({
         id,
         name,
         email,
         password,
+        avatar,
       });
 
       return this.res.status(200).json(user);

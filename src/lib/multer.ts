@@ -15,6 +15,7 @@ export default {
           let folder = "";
 
           if (file.fieldname === "image") folder = "uploads/images";
+          if (file.fieldname === "avatar") folder = "uploads/avatars";
           if (file.fieldname === "video") folder = "uploads/videos";
 
           const fullPath = resolve(__dirname, "..", "..", folder);

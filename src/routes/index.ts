@@ -12,7 +12,7 @@ import { dirname } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-import userRoutes from "./user/userRoutes.js";
+import userRoutes from "./user/index.js";
 import { categoryRoutes } from "./category/index.js";
 import { postRoutes } from "./post/index.js";
 
