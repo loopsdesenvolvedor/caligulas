@@ -104,9 +104,9 @@ class PostServices {
 
       if (fs.existsSync(oldImagePath)) {
         fs.unlinkSync(oldImagePath);
-        console.log("🗑️ Imagem antiga excluída:", oldImagePath);
+        // console.log("Imagem antiga excluída:", oldImagePath);
       } else {
-        console.log("⚠️ Imagem antiga não encontrada:", oldImagePath);
+        // console.log("Imagem antiga não encontrada:", oldImagePath);
       }
     }
 
@@ -115,9 +115,9 @@ class PostServices {
 
       if (fs.existsSync(oldVideoPath)) {
         fs.unlinkSync(oldVideoPath);
-        console.log("🗑️ Vídeo antigo excluído:", oldVideoPath);
+        // console.log("Vídeo antigo excluído:", oldVideoPath);
       } else {
-        console.log("⚠️ Vídeo antigo não encontrado:", oldVideoPath);
+        // console.log("Vídeo antigo não encontrado:", oldVideoPath);
       }
     }
 
