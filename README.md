@@ -17,7 +17,7 @@ Inclui também um chat com IA e suporte para recursos de vídeo.
 - Multers (uploads)
 ```
 
-´´´bash
+```bash
 
 /app
 /next-app # Frontend em Next.js
@@ -35,7 +35,7 @@ schema.prisma # Configuração do banco (sem tabelas ainda)
 turbo.json
 package.json
 
-´´´
+```
 
 ## Como rodar o projeto
 
