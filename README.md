@@ -45,7 +45,8 @@ different types of content together in a single platform.
 
 ## 🎨 Design under construction 
 ```
-⚠️ Notice: This Figma project contains UI/UX designs for an adult platform and is intended exclusively for users aged 18 and over.
+⚠️ Notice: This Figma project contains UI/UX designs for an adult platform and is
+intended exclusively for users aged 18 and over.
 
 ```
 The UI/UX for Caligulas is designed in Figma, where layouts, components, and user flows are planned before implementation. 
