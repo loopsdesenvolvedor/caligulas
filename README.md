@@ -11,3 +11,5 @@ different types of content together in a single platform.
 - A catalog of content creators integrated through an external API;
 - A modern, intuitive, and responsive interface designed to provide the best user experience.
 ---
+
+🛠️ Technologies
