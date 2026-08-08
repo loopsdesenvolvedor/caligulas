@@ -1,13 +1,71 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
   provider = "prisma-client"
   output   = "../src/generated/prisma"
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
+}
+
+model User {
+  id       String  @id @default(cuid())
+  name     String
+  email    String  @unique
+  password String
+  avatar   String?
+  videos   Video[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Gender {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  videos    Video[]
+
+  @@map("genders")
+}
+
+model Category {
+  id     String  @id @default(cuid())
+  name   String
+  slug   String?
+  videos Video[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("categories")
+}
+
+enum VideoType {
+  VIDEO
+  SHORT
+}
+
+model Video {
+  id          String  @id @default(cuid())
+  title       String
+  description String
+  thumbnail   String
+  videoUrl    String
+  userId      String?
+  genderId    String?
+  categoryId  String?
+
+  user     User?     @relation(fields: [userId], references: [id])
+  gender   Gender?   @relation(fields: [genderId], references: [id])
+  category Category? @relation(fields: [categoryId], references: [id])
+
+  type      VideoType @default(VIDEO)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@map("videos")
 }
