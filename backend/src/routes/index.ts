@@ -6,5 +6,10 @@ export const routes = (app: express.Express) => {
   app.use(express.json());
   app.use(userRoutes);
 
-  app.use((err: Error, req: Request, res: Response, next: NextFunction) => {});
+  app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+    console.error(err);
+    res.status(500).json({
+      message: err.message || "Internal server error",
+    });
+  });
 };
